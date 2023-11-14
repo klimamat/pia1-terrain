@@ -8,11 +8,11 @@ Dále je zde abstraktní třída *Path* která slouží k ukládání souřadnic
 
 - **"Letadlo"** - nejkratší cesta mezi dvěma body nehledě na nadmořskou výšku
 - **"Loď"** - nejkratší cesta pouze po polích, kde výška < 0 (kromě výchozího a cílového bodu)
-- **"Silnice"** - nejkratší cesta pouze po polích, kde výška > 0 a zároveň stoupání trasy mezi následujícími body < 0.6%
+- **"Silnice"** - nejkratší cesta pouze po polích, kde výška > 0 a zároveň stoupání trasy mezi následujícími body < 6%
 - **"Silnice + trajekt"** - nejrychlejší cesta mezi dvěma body
-  - pokud je výška > 0, stoupání trasy mezi následujícími body musí být < 0.6%
+  - pokud je výška > 0, stoupání trasy mezi následujícími body musí být < 6%
   - pokud je výška < 0, stoupání není podstatné, ale rychlost pohybu je pouze čtvrtinová oproti pohybu na souši
-- **"Nákladní železnice"** - cesta mezi dvěma body, která minimalizuje celkový součet výškových metrů (stoupání i klesání) na trase a zároveň stoupání trasy mezi následujícími body < 0.4%
+- **"Nákladní železnice"** - cesta mezi dvěma body, která minimalizuje celkový součet výškových metrů (stoupání i klesání) na trase a zároveň stoupání trasy mezi následujícími body < 4%
 
 Najděte tyto typy cest mezi body [198 205] a [78 17]
 
