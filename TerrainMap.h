@@ -18,7 +18,7 @@ struct Point {
     bool operator== (Point const& v) const { return x == v.x && y == v.y; };
     Point operator+ (Point const& v) const { return Point(x+v.x,y+v.y); };
     Point operator- (Point const& v) const { return Point(x-v.x,y-v.y); };
-    bool operator<  (Point const& v) const { return x + y*nx_max; }; // This is to provide a simple ordering, the operator doesn't have a geometrical meaning
+    bool operator<  (Point const& v) const { return x + y*nx_max < v.x + v.y*nx_max; }; // This is to provide a simple ordering, the operator doesn't have a geometrical meaning
     double length() const { return std::sqrt(x*x + y*y); }
 };
 
