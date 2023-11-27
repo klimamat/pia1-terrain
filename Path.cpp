@@ -10,6 +10,12 @@ void Path::printStats() const {
     bool water = false;
     double length = 0.0;
     double alt = 0.0;
+
+    if (path.size() == 0) {
+        std::cout << "Path empty." << std::endl;
+        return;
+    }
+
     int max_alt = map.alt(path[0]);
 
     for (int i=1; i<path.size(); ++i) {
@@ -22,7 +28,14 @@ void Path::printStats() const {
         if (map.alt(u) > max_alt) max_alt = map.alt(u);
     }
 
-    if (land) std::cout << "Path from [" << start.x << ", " << start.y << "] to [" << finish.x << ", " << finish.y << "]" << std::endl;
+    std::cout << "Path designated start = [" << start.x << ", " << start.y << "], finish = [" << finish.x << ", " << finish.y << "]" << std::endl;
+
+    if (path[0] != start)
+        std::cout << "First point on path [" << path[0].x << ", " << path[0].y << "] does not correspond to the designated starting point [" << start.x << ", " << start.y << "] !" << std::endl;
+
+    if (path[path.size()-1] != finish)
+        std::cout << "Last point on path [" << path[path.size()-1].x << ", " << path[path.size()-1].y << "] does not correspond to the designated finish point [" << finish.x << ", " << finish.y << "] !" << std::endl;
+
     if (land) std::cout << "Path type: land" << std::endl;
     if (water) std::cout << "Path type: water" << std::endl;
     std::cout << "Path length: " << length << " km" << std::endl;
