@@ -20,3 +20,7 @@ Funkce *main(...)* je vytvořena tak, že program přijímá jako vstup z přík
  	`./findpath terrain.dat 198 205 78 17`
 
 Skript `./plot_path.py terrain.dat cesta.dat` vykreslí terénní mapu a do ní nalezenou cestu.
+
+Skript `./generate_terrain.py` vygeneruje novou náhodnou terénní mapu. 
+
+Oba skripty vyžadují Python 3 a nainstalované knihovny *numpy, matplotlib*, generátor navíc ještě knihovnu *noise*.
